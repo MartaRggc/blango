@@ -22,6 +22,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path("users/<str:email>", UserDetail.as_view(), name="api_user_detail"),
+    path("api/v1/", include("blog.api_urls")),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
